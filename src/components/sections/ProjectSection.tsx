@@ -1,16 +1,8 @@
 
-import { useRef, useEffect, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/Button"; 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "../../components/ui/carousel";
+
 
 interface Project {
   title: string;
@@ -20,17 +12,9 @@ interface Project {
 }
 
 const ProjectsSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLDivElement>(null);
   const [activeFilter, setActiveFilter] = useState<string>("All");
   
   const projects: Project[] = [
-    {
-      title: "E-commerce Platform",
-      category: "Web Development",
-      image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e520?auto=format&fit=crop&w=800",
-      description: "A full-featured e-commerce platform built with React and Node.js."
-    },
     {
       title: "Finance Dashboard",
       category: "UI/UX Design",
@@ -65,37 +49,7 @@ const ProjectsSection = () => {
   
   const categories = ["All", ...Array.from(new Set(projects.map(p => p.category)))];
   
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top bottom-=100",
-        end: "center center",
-        scrub: 0.5,
-      }
-    });
-    
-    // Animate heading
-    tl.fromTo(
-      headingRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 0.5 }
-    );
-    
-    // Animate project items
-    tl.fromTo(
-      ".project-item",
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, stagger: 0.1, duration: 0.5 },
-      "-=0.3"
-    );
-    
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+
   
   const filteredProjects = activeFilter === "All" 
     ? projects 
@@ -104,11 +58,14 @@ const ProjectsSection = () => {
   return (
     <section 
       id="projects" 
-      ref={sectionRef}
+      // ref={sectionRef}
       className="section py-20 md:py-32"
     >
       <div className="container mx-auto px-4">
-        <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-16">
+    
+        <div 
+        // ref={headingRef}
+         className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Projects</h2>
           <p className="text-gray-400 mb-8">
             Explore our portfolio of successful projects that showcase our expertise and creativity.
@@ -133,7 +90,7 @@ const ProjectsSection = () => {
         </div>
         
         {/* Desktop Grid View */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid-1  grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <div key={index} className="project-item group overflow-hidden rounded-lg bg-[#1a1a1a] border border-gray-800 transition-all duration-300 hover:border-blue-500/50">
               <div className="relative overflow-hidden">
@@ -161,7 +118,7 @@ const ProjectsSection = () => {
         </div>
         
         {/* Mobile Carousel View */}
-        <div className="md:hidden">
+        {/* <div className="md:hidden">
           <Carousel className="w-full">
             <CarouselContent>
               {filteredProjects.map((project, index) => (
@@ -188,7 +145,7 @@ const ProjectsSection = () => {
               <CarouselNext className="relative static translate-y-0" />
             </div>
           </Carousel>
-        </div>
+        </div> */}
         
         <div className="text-center mt-12">
           <Button 

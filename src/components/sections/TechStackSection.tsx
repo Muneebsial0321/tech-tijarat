@@ -188,12 +188,12 @@ const TechStackSection = () => {
 
         <div
           ref={techListRef}
-          className="md:grid md:grid-cols-2 lg:grid-cols-7 gap-6 flex md:block overflow-x-auto py-6 md:pb-0 hide-scrollbar"
+          className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 py-6"
         >
           {techStack.map((tech, index) => (
             <div
               key={index}
-              className="tech-item min-w-[150px] md:min-w-0 glass-card rounded-lg p-6 flex flex-col items-center transition-all float-animation relative group"
+              className="tech-item bg-[#00000000] md:w-[10rem] md:min-w-0 glass-card rounded-lg p-6 flex flex-col items-center transition-all float-animation relative group"
             >
               <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
               <div className="w-16 h-16 flex items-center justify-center relative z-10">

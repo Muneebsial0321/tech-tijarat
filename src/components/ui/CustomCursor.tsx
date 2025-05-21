@@ -34,7 +34,7 @@ const CustomCursor = () => {
   return (
     <div
       ref={cursorRef}
-      className="pointer-events-none fixed z-[9999] h-6 w-6 rounded-full bg-white mix-blend-difference"
+      className="max-md:hidden pointer-events-none fixed z-[9999] h-6 w-6 rounded-full bg-white mix-blend-difference"
     />
   )
 }

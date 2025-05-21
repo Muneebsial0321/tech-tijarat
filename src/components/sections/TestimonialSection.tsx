@@ -106,27 +106,10 @@ const TestimonialsSection = () => {
         </div>
         
         {/* Desktop View with 2-column grid */}
-        <div className="hidden md:grid md:grid-cols-2 gap-6">
+        <div className="grid-cols-1 grid md:grid-cols-2 gap-6">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
           ))}
-        </div>
-        
-        {/* Mobile View with Carousel */}
-        <div className="md:hidden">
-          <Carousel className="w-full">
-            <CarouselContent>
-              {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index}>
-                  <TestimonialCard testimonial={testimonial} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center mt-4">
-              <CarouselPrevious className="relative static translate-y-0 mr-2" />
-              <CarouselNext className="relative static translate-y-0" />
-            </div>
-          </Carousel>
         </div>
       </div>
     </section>
