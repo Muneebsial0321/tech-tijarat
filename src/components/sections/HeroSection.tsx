@@ -68,7 +68,9 @@ const HeroSection = () => {
           playsInline
           poster="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=2000"
         >
+          {/* <source src="/clock.webm" type="video/mp4" /> */}
           <source src="/video.mp4" type="video/mp4" />
+          {/* <source src="/video.mp4" type="video/mp4" /> */}
           {/* Fallback image if video doesn't load */}
           <img
             src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=2000"

@@ -11,6 +11,7 @@ import ProjectsSection from "../sections/ProjectSection";
 import TestimonialsSection from "../sections/TestimonialSection";
 import ContactSection from "../sections/ContactSection";
 import Footer from "../layout/Footer";
+import { UnSureSection } from "../sections/UnSureSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,6 +62,7 @@ const Index = () => {
         <TechStackSection />
         <ProjectsSection />
         <TestimonialsSection />
+        <UnSureSection />
         <ContactSection />
       </main>
       <Footer />

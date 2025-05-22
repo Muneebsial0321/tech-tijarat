@@ -177,6 +177,29 @@ const TechStackSection = () => {
       ref={sectionRef}
       className="section py-20 md:py-32 bg-[#080325]"
     >
+
+            {/* Video background - replace with actual video */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#090979]/50 to-[#020024]/70 z-10"></div>
+        <video 
+          className="w-full h-full object-cover"
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          poster="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=2000"
+        >
+          <source src="/clock.webm" type="video/mp4" />
+          {/* <source src="/video.mp4" type="video/mp4" /> */}
+          {/* <source src="/video.mp4" type="video/mp4" /> */}
+          {/* Fallback image if video doesn't load */}
+          <img
+            src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=2000"
+            alt="Agency hero background"
+            className="w-full h-full object-cover"
+          />
+        </video>
+      </div>
       <div className="container mx-auto px-4">
         <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-block text-xs text-blue-400 font-semibold tracking-wider uppercase mb-2">Powered By</span>

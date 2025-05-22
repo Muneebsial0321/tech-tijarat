@@ -83,19 +83,23 @@ const ContactSection = () => {
   return (
     <section 
       id="contact" 
-      ref={sectionRef}
-      className="section py-20 md:py-32"
+      // ref={sectionRef}
+      className="section pb-20 md:py-32"
     >
       <div className="container mx-auto px-4">
-        <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-16">
+        <div
+        //  ref={headingRef}
+          className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h2>
           <p className="text-gray-400">
             Have a project in mind? Let's discuss how we can help bring your vision to life.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
-          <form ref={formRef} onSubmit={handleSubmit} className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 animate-item">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative top-10  items-start w-[97%] sm:w-[80%] md:max-w-4xl mx-auto">
+          <form 
+          // ref={formRef}
+           onSubmit={handleSubmit} className="p-8 rounded-lg border border-gray-800 animate-item">
             <h3 className="text-2xl font-bold mb-6 text-white">Send us a message</h3>
             
             <div className="space-y-6">
@@ -153,7 +157,9 @@ const ContactSection = () => {
             </div>
           </form>
           
-          <div ref={infoRef} className="animate-item space-y-8">
+          <div 
+          // ref={infoRef}
+           className="animate-item space-y-8">
             <div className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800">
               <h3 className="text-xl font-bold mb-6 text-white">Contact Information</h3>
               
